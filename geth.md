@@ -107,4 +107,23 @@ Welcome to the Geth JavaScript console!
  --allow-insecure-unlock
  ```
  
+ 起動時にpasswordを記述したテキストファイルを指定してもロック解除できる
+ ```
+ geth --networkid "10" --nodiscover --datadir ~/geth/private_net/ --rpc --rpcaddr "localhost" --rpcport "8545" --rpccorsdomain "*" --rpcapi "etc,net,web3,personal" --targetgaslimit "20000000" --allow-insecure-unlock console 2>> ~/geth/private_net/error.log --unlock 0xaad807d96cf6ab0b9649c6f1903053b5dc5cb716,0x434a76077b518593f3bef997cb9f9d087c049aac,0x77fb188542171bf00b2f0031b91a6b96782da879 --password ~/geth/private_net/password.txt
+ ```
  
+トランザクションの確認
+ ```
+ eth.getTransaction("<送金成功時に取得したハッシュ値>")
+ ```
+ ブロックごとに残高確認
+ ```
+ web3.fromWei(eth.getBalance(eth.accounts[2],23), "ether")
+ 0
+ web3.fromWei(eth.getBalance(eth.accounts[2],24), "ether")
+ 2
+ ```
+ トランザクションのレシート確認
+ ```
+ eth.getTransactionReceipt("<送金成功時に取得したハッシュ値>")
+ ```
