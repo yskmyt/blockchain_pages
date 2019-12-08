@@ -1,4 +1,31 @@
-### geth導入
+### gethインストール
+```
+brew tap ethereum/ethereum
+```
+
+```
+brew install ethereum
+```
+
+```
+usernoMacBook-Pro:~ yusuke$ geth version
+Geth
+Version: 1.9.7-stable
+Architecture: amd64
+Protocol Versions: [64 63]
+Network Id: 1
+Go Version: go1.13.4
+Operating System: darwin
+GOPATH=
+GOROOT=/usr/local/Cellar/go/1.13.4/libexec
+```
+
+```
+usernoMacBook-Pro:~ yusuke$ puppeth --version
+puppeth version 0.0.0
+```
+
+### geth private_net作成
 genesis.json
 ```
 {
