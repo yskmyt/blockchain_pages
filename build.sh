@@ -11,12 +11,12 @@ git pull
 # ローカルコミットと最新のコミットに差分があるファイル名を取得
 diff_md_files=$(git diff --name-only ${localCommit} HEAD --relative | grep ".md")
 if [ ${#diff_md_files[*]} -ne 0 ]; then
-    echo ${diff_md_files[*]} | pbcopy
+    echo "${diff_md_files[*]}" | pbcopy
     vi SUMMARY.md
     wait
     gitbook build ./ ./docs
     wait
     git add .
-    git commit -m \"$(echo ${diff_md_files[*]})\"
+    git commit -m \"$(echo "${diff_md_files[*]}")\"
     git push
 fi
