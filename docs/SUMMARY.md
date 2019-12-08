@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-  * [geth](geth.md)
+  * [geth](docs/geth.md)
 
